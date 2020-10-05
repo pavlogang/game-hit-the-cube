@@ -93,12 +93,19 @@ function renderBox() {
     box.style.left = getRandom(0, maxLeft) + 'px';
     box.style.backgroundColor = '#000';
     box.style.cursor = 'pointer';
-    box.setAttribute('data-box', 'true')
+    box.setAttribute('data-box', 'true');
+    box.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
 
     $game.insertAdjacentElement('afterbegin', box)
+}
+
+function randomColor() {
+    return Math.trunc(Math.random() * 254 + 1)
 }
 
 
 function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
+
+console.log(randomColor());
